@@ -1,23 +1,27 @@
-# Sparrow: Baby Tracker — privacy policy
+# Sparrow: Baby Tracker — public pages
 
-This repository exists only to host the privacy policy for **Sparrow: Baby
-Tracker** as a public web page, at the URL referenced by the App Store listing:
+This repository exists only to host the public pages for **Sparrow: Baby
+Tracker**, at the URLs referenced by the App Store listing and by the app
+itself:
 
-<https://rlubbers6.github.io/sparrowbabytracker/>
+- Privacy policy — <https://rlubbers6.github.io/sparrowbabytracker/>
+- Support — <https://rlubbers6.github.io/sparrowbabytracker/support.html>
 
-## Do not edit `index.html` here
+## Do not edit the HTML here
 
-It is **generated**. The source of truth is `docs/privacy-policy.md` in the
-app's own (private) repository, and the page is produced from it by
-`scripts/build-privacy-page.mjs`:
+`index.html` and `support.html` are **generated**. The sources of truth are
+`docs/privacy-policy.md` and `docs/support.md` in the app's own (private)
+repository, and both pages are produced from them by one script:
 
 ```
-node scripts/build-privacy-page.mjs <path-to-this-repo>
+node scripts/build-pages.mjs <path-to-this-repo>
 ```
 
-Editing the HTML directly means the published policy and the one that ships
-with the app quietly disagree — which, for the document a user relies on to
+Editing the HTML directly means the published documents and the ones that ship
+with the app quietly disagree — which, for a policy a user relies on to
 understand what happens to their child's medical records, is the one outcome
-worth engineering against.
+worth engineering against. Both pages share a single renderer for the same
+reason: a support page that slowly stops looking like the privacy policy is a
+support page nobody believes is official.
 
 The app's source is not published here; it stays private.
